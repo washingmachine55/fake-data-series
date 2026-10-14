@@ -1,0 +1,17 @@
+{
+  "name": "stubbur",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "^1.4.3",
+    "prettier": "^3.9.10"
+  },
+  "peerDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@hono/swagger-ui": "^0.6.1",
+    "@hono/zod-openapi": "^1.6.3",
+    "hono": "^4.13.13",
+    "zod": "^4.6.7"
+  }
+}

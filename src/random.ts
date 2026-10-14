@@ -1,15 +1,15 @@
 // GET /random: a ready-to-copy request with a random dataset, auth mode and formats, plus
 // where its records, times and values sit in the response. ?seed= repeats a suggestion.
-import { authModes, type AuthModeName } from "./auth";
-import { datasets } from "./datasets";
-import type { Dataset } from "./datasets/types";
-import { envelopes, type Envelope } from "./envelopes";
-import { timeFormats } from "./formats/time";
-import { dateStyles, periodStyles, valueStyles } from "./formats/values";
-import { HALF_HOUR, HOUR, addDays, londonDate } from "./lib/london";
-import { rand } from "./lib/rng";
-import { granularities } from "./query";
-import { scenarios } from "./scenarios";
+import { authModes, type AuthModeName } from "./auth.js";
+import { datasets } from "./datasets/index.js";
+import type { Dataset } from "./datasets/types.js";
+import { envelopes, type Envelope } from "./envelopes.js";
+import { timeFormats } from "./formats/time.js";
+import { dateStyles, periodStyles, valueStyles } from "./formats/values.js";
+import { HALF_HOUR, HOUR, addDays, londonDate } from "./lib/london.js";
+import { rand } from "./lib/rng.js";
+import { granularities } from "./query.js";
+import { scenarios } from "./scenarios.js";
 
 export interface RandomOptions {
   seed: string;

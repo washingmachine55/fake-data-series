@@ -1,6 +1,6 @@
 // How timestamps are written in records (?timeFormat=). Add a format by adding an entry;
 // the query enum, the docs table and /meta pick it up automatically.
-import { londonFields, londonOffsetMinutes, pad } from "../lib/london";
+import { londonFields, londonOffsetMinutes, pad } from "../lib/london.js";
 
 export interface TimeFormat {
   description: string;

@@ -1,6 +1,6 @@
 // The requested window, from the query: from/to (any common timestamp shape) or a
 // settlement date with optional period range.
-import { DAY, HALF_HOUR, fromLondonWallClock, londonMidnight, periodsInDay } from "./london";
+import { DAY, HALF_HOUR, fromLondonWallClock, londonMidnight, periodsInDay } from "./london.js";
 
 export interface Window {
   from: Date;

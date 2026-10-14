@@ -1,7 +1,7 @@
 // Generic edits to a dataset's records: gaps, conflicting duplicates, shuffled order.
-import type { Rec } from "./datasets/types";
-import { getPath, setPath } from "./lib/paths";
-import { rand } from "./lib/rng";
+import type { Rec } from "./datasets/types.js";
+import { getPath, setPath } from "./lib/paths.js";
+import { rand } from "./lib/rng.js";
 
 export interface ShapeOptions {
   /** Drop every Nth record. */

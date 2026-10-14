@@ -246,9 +246,9 @@ There's no route or doc wiring to touch.
 
    ```ts
    import { z } from "@hono/zod-openapi";
-   import { dailyShape, intervals } from "../lib/london";      // or settlementPeriods for half-hour GB periods
-   import { between, round } from "../lib/rng";
-   import { list, type Dataset } from "./types";
+   import { dailyShape, intervals } from "../lib/london.js";   // or settlementPeriods for half-hour GB periods
+   import { between, round } from "../lib/rng.js";
+   import { list, type Dataset } from "./types.js";
 
    export const myDataset: Dataset = {
      id: "my-dataset",                       // URL: /{auth}/v1/my-dataset
@@ -279,6 +279,8 @@ There's no route or doc wiring to touch.
    ```
 
 2. Add it to the array in `src/datasets/index.ts`.
+
+**Imports need `.js` on relative paths**, including in the template above: `"../lib/london.js"`, `"./datasets/index.js"` (never just `"./datasets"`). Vercel runs each compiled file with Node, which needs the full path. TypeScript maps `.js` to the `.ts` file, and `bun run typecheck` rejects an import without it.
 
 Rules that keep every option working on your dataset:
 - **Times:** write them through `ctx.time(date)`.

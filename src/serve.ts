@@ -1,15 +1,15 @@
 // One dataset request: window → records → shaping → envelope → scenario.
 import type { Context } from "hono";
-import { config } from "./config";
-import type { Dataset } from "./datasets/types";
-import { envelopes } from "./envelopes";
-import { timeFormats } from "./formats/time";
-import { dateStyles, periodStyles, valueStyles } from "./formats/values";
-import { HOUR } from "./lib/london";
-import { resolveWindow } from "./lib/window";
-import { granularities, type DatasetQuery } from "./query";
-import { scenarios } from "./scenarios";
-import { shape } from "./shaping";
+import { config } from "./config.js";
+import type { Dataset } from "./datasets/types.js";
+import { envelopes } from "./envelopes.js";
+import { timeFormats } from "./formats/time.js";
+import { dateStyles, periodStyles, valueStyles } from "./formats/values.js";
+import { HOUR } from "./lib/london.js";
+import { resolveWindow } from "./lib/window.js";
+import { granularities, type DatasetQuery } from "./query.js";
+import { scenarios } from "./scenarios.js";
+import { shape } from "./shaping.js";
 
 export function serveDataset(c: Context, ds: Dataset, q: DatasetQuery) {
   const window = resolveWindow(q);

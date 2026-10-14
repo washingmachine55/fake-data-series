@@ -1,7 +1,7 @@
 import { z } from "@hono/zod-openapi";
-import { dailyShape, daylight, settlementPeriods } from "../lib/london";
-import { between, round } from "../lib/rng";
-import { list, type Dataset } from "./types";
+import { dailyShape, daylight, settlementPeriods } from "../lib/london.js";
+import { between, round } from "../lib/rng.js";
+import { list, type Dataset } from "./types.js";
 
 // Generation per unit per settlement period: several records share each time and differ
 // by unit, so a consumer must split them into one series per unit.

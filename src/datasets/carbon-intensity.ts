@@ -1,6 +1,6 @@
-import { dailyShape, intervals } from "../lib/london";
-import { between } from "../lib/rng";
-import type { Dataset } from "./types";
+import { dailyShape, intervals } from "../lib/london.js";
+import { between } from "../lib/rng.js";
+import type { Dataset } from "./types.js";
 
 // Nested measures and nulls: `intensity.actual` is null for intervals that haven't
 // happened yet, as live forecast feeds do.

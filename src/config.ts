@@ -1,6 +1,7 @@
-// process.env works on Bun (which also loads .env), Node and Vercel. Defaults keep the
-// server usable with no setup.
-const env = process.env;
+// process.env on Bun (which also loads .env), Node and Vercel; read through globalThis so
+// no Node type definitions are needed. Defaults keep the server usable with no setup.
+type Env = Record<string, string | undefined>;
+const env: Env = (globalThis as { process?: { env?: Env } }).process?.env ?? {};
 
 export const config = {
   port: Number(env.PORT ?? 4070),

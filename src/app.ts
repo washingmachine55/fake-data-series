@@ -2,19 +2,19 @@
 // OAuth token issuing, echo, and the generated OpenAPI spec + Swagger UI.
 import { OpenAPIHono, createRoute, z } from "@hono/zod-openapi";
 import { swaggerUI } from "@hono/swagger-ui";
-import { authModes, basicCredentials, issueToken, securitySchemes, type AuthModeName } from "./auth";
-import { cases } from "./cases";
-import { config } from "./config";
-import { datasetById, datasets } from "./datasets";
-import type { Dataset } from "./datasets/types";
-import { envelopes } from "./envelopes";
-import { timeFormats } from "./formats/time";
-import { valueStyles } from "./formats/values";
-import { getPath } from "./lib/paths";
-import { datasetQuery, type DatasetQuery } from "./query";
-import { suggest, type Suggestion } from "./random";
-import { resetScenarios, scenarios } from "./scenarios";
-import { serveDataset } from "./serve";
+import { authModes, basicCredentials, issueToken, securitySchemes, type AuthModeName } from "./auth.js";
+import { cases } from "./cases.js";
+import { config } from "./config.js";
+import { datasetById, datasets } from "./datasets/index.js";
+import type { Dataset } from "./datasets/types.js";
+import { envelopes } from "./envelopes.js";
+import { timeFormats } from "./formats/time.js";
+import { valueStyles } from "./formats/values.js";
+import { getPath } from "./lib/paths.js";
+import { datasetQuery, type DatasetQuery } from "./query.js";
+import { suggest, type Suggestion } from "./random.js";
+import { resetScenarios, scenarios } from "./scenarios.js";
+import { serveDataset } from "./serve.js";
 
 const errorBody = z.object({ error: z.string(), message: z.string().optional() });
 const json = <T extends z.ZodType>(schema: T, description: string) => ({ description, content: { "application/json": { schema } } });

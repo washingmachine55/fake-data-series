@@ -1,5 +1,5 @@
 // Where the records sit in the response body (?envelope=). Add one by adding an entry.
-import type { Rec } from "./datasets/types";
+import type { Rec } from "./datasets/types.js";
 
 export interface EnvelopeMeta {
   dataset: string;

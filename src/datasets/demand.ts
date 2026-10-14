@@ -1,6 +1,6 @@
-import { dailyShape, intervals } from "../lib/london";
-import { between, round } from "../lib/rng";
-import type { Dataset } from "./types";
+import { dailyShape, intervals } from "../lib/london.js";
+import { between, round } from "../lib/rng.js";
+import type { Dataset } from "./types.js";
 
 // National demand on fixed intervals (?granularity=), each with a start and an end time.
 export const demand: Dataset = {

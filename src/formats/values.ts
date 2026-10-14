@@ -1,5 +1,5 @@
 // How numeric measures are written in records (?valueStyle=). Add a style by adding an entry.
-import { rand } from "../lib/rng";
+import { rand } from "../lib/rng.js";
 
 export interface ValueStyle {
   description: string;

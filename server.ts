@@ -1,5 +1,6 @@
-import app from "./src/index";
-import { config } from "./src/config";
+/// <reference types="bun" />
+import app from "./src/index.js";
+import { config } from "./src/config.js";
 
 console.log(
   `stubbur on http://localhost:${config.port}  (docs: /docs, spec: /openapi.json)`,

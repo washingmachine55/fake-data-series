@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
     // Environment setup & latest features
-    "lib": ["ESNext"],
+    // Web-standard globals only (fetch, Response, URL, streams…), so the app type-checks
+    // on any host without runtime type packages.
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
-    "module": "Preserve",
+    "module": "NodeNext",
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
-    "types": ["bun"],
+    // No runtime type packages: a deploy build that lacks @types/bun can't fail on them.
+    // Bun-only files (server.ts, scripts/) reference Bun's types themselves.
+    "types": [],
 
-    // Bundler mode
-    "moduleResolution": "bundler",
+    // Node's ESM rules: Vercel runs each compiled file with Node, which needs full relative
+    // paths ("./app.js", "./datasets/index.js"). tsc rejects imports without them.
+    "moduleResolution": "NodeNext",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,

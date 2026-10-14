@@ -1,7 +1,7 @@
 import { z } from "@hono/zod-openapi";
-import { dailyShape, settlementPeriods } from "../lib/london";
-import { between, round } from "../lib/rng";
-import { list, type Dataset } from "./types";
+import { dailyShape, settlementPeriods } from "../lib/london.js";
+import { between, round } from "../lib/rng.js";
+import { list, type Dataset } from "./types.js";
 
 const PROVIDERS = ["APXMIDP", "N2EXMIDP"];
 

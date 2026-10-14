@@ -1,7 +1,7 @@
 import { z } from "@hono/zod-openapi";
-import { dailyShape, intervals } from "../lib/london";
-import { between, round } from "../lib/rng";
-import { list, type Dataset } from "./types";
+import { dailyShape, intervals } from "../lib/london.js";
+import { between, round } from "../lib/rng.js";
+import { list, type Dataset } from "./types.js";
 
 const METERS = ["MTR-0001", "MTR-0002", "MTR-0003"];
 

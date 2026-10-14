@@ -1,6 +1,6 @@
-import { dailyShape, settlementPeriods } from "../lib/london";
-import { between, rand, round } from "../lib/rng";
-import type { Dataset } from "./types";
+import { dailyShape, settlementPeriods } from "../lib/london.js";
+import { between, rand, round } from "../lib/rng.js";
+import type { Dataset } from "./types.js";
 
 // Imbalance prices per settlement period. Prices go negative now and then (windy nights),
 // and the imbalance volume is signed.

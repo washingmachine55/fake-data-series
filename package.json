@@ -10,7 +10,6 @@
     "test": "bun test",
     "format": "prettier --write ."
   },
-
   "devDependencies": {
     "@types/bun": "^1.4.3",
     "prettier": "^3.9.10"

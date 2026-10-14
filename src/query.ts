@@ -1,12 +1,12 @@
 // The query params every dataset route accepts. Enums and their docs come from the
 // registries, so a new format, envelope or scenario shows up here without edits.
 import { z } from "@hono/zod-openapi";
-import type { Dataset } from "./datasets/types";
-import { envelopes } from "./envelopes";
-import { timeFormats, type TimeFormatName } from "./formats/time";
-import { dateStyles, periodStyles, valueStyles } from "./formats/values";
-import { HOUR, MINUTE, DAY, HALF_HOUR } from "./lib/london";
-import { scenarios } from "./scenarios";
+import type { Dataset } from "./datasets/types.js";
+import { envelopes } from "./envelopes.js";
+import { timeFormats, type TimeFormatName } from "./formats/time.js";
+import { dateStyles, periodStyles, valueStyles } from "./formats/values.js";
+import { HOUR, MINUTE, DAY, HALF_HOUR } from "./lib/london.js";
+import { scenarios } from "./scenarios.js";
 
 export const granularities = { "5m": 5 * MINUTE, "15m": 15 * MINUTE, "30m": HALF_HOUR, "1h": HOUR, "1d": DAY };
 

@@ -1,7 +1,7 @@
 // Auth modes: each is a path prefix (/open, /apikey, …) guarding every dataset route.
 // Add a mode by adding an entry to `authModes`; the routes and the spec follow.
 import type { Context, MiddlewareHandler } from "hono";
-import { config } from "./config";
+import { config } from "./config.js";
 
 export interface AuthMode {
   description: string;

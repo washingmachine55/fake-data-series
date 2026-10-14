@@ -29,7 +29,7 @@ export const scenarios = {
   delay: {
     description: "waits delayMs (default 35000) and then answers 200; for client timeouts",
     run: async (c, p, body) => {
-      await Bun.sleep(p.delayMs);
+      await new Promise((resolve) => setTimeout(resolve, p.delayMs));
       return c.json(body());
     },
   },
@@ -74,7 +74,10 @@ export const scenarios = {
   },
   gzip: {
     description: "200 with the body gzip-compressed (Content-Encoding: gzip), whatever the client asked for",
-    run: (c, _p, body) => c.body(Bun.gzipSync(JSON.stringify(body())), 200, { ...JSON_TYPE, "Content-Encoding": "gzip" }),
+    run: (_c, _p, body) =>
+      new Response(new Blob([JSON.stringify(body())]).stream().pipeThrough(new CompressionStream("gzip")), {
+        headers: { ...JSON_TYPE, "Content-Encoding": "gzip" },
+      }),
   },
   huge: {
     description: "200 streaming a valid {\"data\": [...]} of about sizeMb (default 12) MB",

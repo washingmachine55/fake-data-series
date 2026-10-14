@@ -1,9 +1,9 @@
-import { createApp } from "./src/app";
+import app from "./src/index";
 import { config } from "./src/config";
 
-const app = createApp();
-
-console.log(`stubbur on http://localhost:${config.port}  (docs: /docs, spec: /openapi.json)`);
+console.log(
+  `stubbur on http://localhost:${config.port}  (docs: /docs, spec: /openapi.json)`,
+);
 
 export default {
   port: config.port,
